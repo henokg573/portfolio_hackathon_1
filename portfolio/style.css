@@ -68,7 +68,7 @@ header p {
   font-size: 1.2rem;
 }
 
-this is all vanilla css right?
+
 /* Animation Keyframes */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
@@ -132,39 +132,82 @@ this is all vanilla css right?
 }
 
 /* Navigation */
-nav {
-  background-color: #222;
+n/* Responsive Navigation - Pure CSS */
+
+.nav-container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
 }
 
-nav ul {
+/* Hide the checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger icon styling */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Desktop view */
+.nav-links {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 20px;
 }
 
-nav li {
-  display: inline-block;
-}
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background-color: #222;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+    z-index: 999;
+  }
 
-nav a:hover {
-  background-color: #555;
-}
+  /* Show menu when checkbox is checked */
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
 
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    background-color: #444;
+  }
+}
 /* Sections */
 section {
   background-color: white;
