@@ -30,7 +30,7 @@ Welcome to my personal portfolio website, built for the PLP July 2025 Hackathon 
 
 ## 🚀 Deployment
 
-Hosted on GitHub Pages: [https://henokg573.github.io/portfolio](https://henokg573.github.io/portfolio)
+Hosted on GitHub Pages: [https://henokgirmaportfolio.vercel.app/]
 
 ## 📬 Contact
 
